@@ -1,1 +1,101 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&display=swap');
+
+$colors: (
+    primary: #005Dff,
+    primary-light: lighten(#005DFF, 40%),
+    primary-dark: darken(#005DFF, 40%),
+    accent: #93e0eb
+);
+$padding: 15px;
+$borders: 15px;
+$desktop: 840px;
+
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop})
+    {
+        @content;
+    }
+}
+
+header {
+    margin-bottom: 10px;
+
+    a {
+        color: color(primary);
+        text-decoration: none;
+        padding: $padding;
+        display: block;
+        text-transform: uppercase;
+
+        @include desktop {
+            display: inline;
+        }
+    }
+    a#newUserBtn {
+        margin-right: 5px;
+        cursor: pointer;
+        color: #fff;
+        border-radius: $borders;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        background-color: color(primary);
+        width: fit-content;
+        text-align: center;
+
+            &:hover {
+                background-color: color(accent);
+            }
+
+            @include desktop {
+                padding: $padding $padding * 4;
+            }
+    }
+    a#postsBtn {
+        cursor: pointer;
+        color: #fff;
+        border-radius: $borders;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        background-color: color(primary-light);
+        width: fit-content;
+        margin-top: 7px;
+        text-align: center;
+
+            &:hover {
+                background-color: color(primary-dark);
+            }
+
+            @include desktop {
+                padding: $padding $padding * 4;
+            }
+    }
+}
+
+body {
+    font-family: 'Montserrat';
+    margin: 0;
+    
+    #bg {
+        clip-path: polygon(50% 0, 100% 0, 0 50%, 0 20%);
+        background-image: url('../src/assets/images/bg.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+
+        @include desktop {
+            clip-path: polygon(45% 0, 100% 0, 55% 100%, 0 100%);
+            background-image: url('../src/assets/images/bg.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+}

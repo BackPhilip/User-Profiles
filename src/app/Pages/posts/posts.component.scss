@@ -1,0 +1,58 @@
+$colors: (
+    primary: #005Dff,
+    primary-light: lighten(#005DFF, 40%),
+    primary-dark: darken(#005DFF, 40%),
+    accent: #93e0eb
+);
+$padding: 15px;
+$borders: 15px;
+$desktop: 840px;
+
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop})
+    {
+        @content;
+    }
+}
+
+main {
+    justify-content: center;
+
+    section#Card {
+        text-align: center;
+        color: color(primary);
+        background-color: #fff;
+        padding: 20px;
+        margin: 1em auto;
+        border-radius: $borders;
+        box-shadow: 0 10px 30px rgba(0,0,0,.2);
+        width: fit-content;
+        height: fit-content;
+        margin-top: 1em;
+        padding-left: 25px;
+        padding-right: 25px;
+
+        @include desktop {
+            width: 300px;
+            height: fit-content;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        h3 {
+            text-align: start;
+
+            img {
+                margin-right: 7px;
+                vertical-align: middle;
+                height: 60px;
+                width: 50px;
+                border-radius: 50%;
+            }
+        }
+    }
+}

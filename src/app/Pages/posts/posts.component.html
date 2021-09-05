@@ -1,0 +1,13 @@
+<body>
+    <br>
+    <header>
+        <a>Posts</a>
+    </header>
+
+    <main>
+        <section *ngFor="let post of posts" id="Card">
+                <h3><img src={{userImg(post.userId)}}>{{ post.title }}</h3>
+                <p>{{post.text}}</p>
+        </section>
+    </main>
+</body>

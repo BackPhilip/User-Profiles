@@ -1,0 +1,63 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Hailey Hudson",
+      "age": 22,
+      "about": "First Year Student at Kovsies, Programming Logic and History",
+      "gender": false,
+      "created": "2021-09-04",
+      "profileImg": "../../../assets/images/Hailey-Hudson.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Peter Prince",
+      "age": 25,
+      "about": "Second Year Student at Kovsies, statistical programming and backend moderation",
+      "gender": true,
+      "created": "2021-08-03",
+      "profileImg": "../../../assets/images/Peter-Hudson.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Harry Strong",
+      "age": 27,
+      "about": "Third Year Student at Kovsies, project management and planning",
+      "gender": true,
+      "created": "2021-07-01",
+      "profileImg": "../../../assets/images/Harry-Strong.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Tuan Khet",
+      "age": 21,
+      "about": "Fourth Year Student at Kovsies, graphic designer using scss",
+      "gender": false,
+      "created": "2020-09-05",
+      "profileImg": "../../../assets/images/Tuan-Khet.jpg"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Greek saying",
+      "text": "My First post, “It is difficult to argue with the belly, as it has no ears”",
+      "created": "2021-09-05",
+      "userId": 2
+    },
+    {
+      "id": 2,
+      "title": "Enjoying the sun",
+      "text": "I take a couple of hours each day to sit outside and enjoy the sun's warmth, it really contributes to my well being",
+      "created": "2021-09-04",
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "title": "New Project",
+      "text": "Started a new project with my team, siked to see where it will take us",
+      "created": "2021-08-13",
+      "userId": 3
+    }
+  ]
+}
