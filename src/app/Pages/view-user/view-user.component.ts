@@ -16,11 +16,15 @@ export class ViewUserComponent implements OnInit {
 
   constructor(private dataService: DataService, private router: Router, private userService: UserService) { }
 
+  //
+  //Deploys the UserService and gets a single user, makes a copy of the 
+  //current userId to the local storage to be used in case the page is refreshed
+  //
   ngOnInit(): void {
 
     if (this.dataService.userId == undefined)
     {
-      this.userService.getUser(localStorage.getItem('User')!).subscribe(user => {
+        this.userService.getUser(localStorage.getItem('User')!).subscribe(user => {
         this.user = user;
         this.user.dateOfBirth = user.dateOfBirth.substring(0,10);
         this.user.registerDate = user.registerDate.substring(0, 10);
@@ -28,9 +32,9 @@ export class ViewUserComponent implements OnInit {
     }
     else
     {
-      localStorage.setItem('User',(this.dataService.userId));
-      this.userId = this.dataService.userId;
-      this.userService.getUser(this.dataService.userId).subscribe(user => {
+        localStorage.setItem('User',(this.dataService.userId));
+        this.userId = this.dataService.userId;
+        this.userService.getUser(this.dataService.userId).subscribe(user => {
         this.user = user;
         this.user.dateOfBirth = user.dateOfBirth.substring(0,10);
         this.user.registerDate = user.registerDate.substring(0, 10);
@@ -38,6 +42,9 @@ export class ViewUserComponent implements OnInit {
     }
   }
 
+  //
+  //Navigates back to the Home page
+  //
   onBack()
   {
     this.router.navigateByUrl('/Home');

@@ -55,6 +55,26 @@ header {
                 padding: $padding $padding * 4;
             }
     }
+    a#backBtn {
+        margin-right: 5px;
+        cursor: pointer;
+        color: #fff;
+        border-radius: $borders;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        background-color: color(primary);
+        width: fit-content;
+        text-align: center;
+
+            &:hover {
+                background-color: color(accent);
+            }
+
+            @include desktop {
+                padding: $padding $padding * 4;
+            }
+    }
 }
 
 body {

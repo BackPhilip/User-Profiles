@@ -1,10 +1,15 @@
 <br>
 <header>
-    <a>Philip Greyling - User Profiles <a id="postsBtn" (click) = "onPosts()">Check Posts</a></a>
+    <a>Philip Greyling - User Profiles <a id="postsBtn" (click) = "onPosts()">Go to Posts</a></a>
 </header>
 <main>
-    <section *ngFor="let user of users" id="Card" (click) = "onClick(user)">
+    <section *ngFor="let user of users | paginate: {itemsPerPage: itemsPerPage, currentPage: page}" id="Card" (click) = "onClick(user)">
             <img src={{user.picture}} id="profileImg">
             <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+            <h4>{{ user.title }}</h4>
     </section>
 </main>
+<div>
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>
+

@@ -1,13 +1,16 @@
+<br>
+<header>
+    <a>Posts <a id="backBtn" (click) = "onBack()">Go Back</a></a>
+</header>
 <body>
-    <br>
-    <header>
-        <a>Posts</a>
-    </header>
-
     <main>
-        <section *ngFor="let post of posts" id="Card">
+        <section *ngFor="let post of posts | paginate: {itemsPerPage: itemsPerPage, currentPage: page}" id="Card">
                 <h3><img src="{{post.owner.picture}}">  <p>{{post.owner.title}} {{post.owner.firstName}} {{post.owner.lastName}}</p> <small>{{post.publishDate}}</small></h3>
-                <p><img src="{{post.image}}"> <strong>{{post.text}}</strong> </p>
+                <p><img src="{{post.image}}"> <strong>{{post.text}}</strong></p>
+                <span *ngFor="let tag of post.tags">{{tag}}</span> <p><fa-icon [icon]="faThumbsUp"></fa-icon> {{post.likes}} </p>
         </section>
     </main>
 </body>
+<div>
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>

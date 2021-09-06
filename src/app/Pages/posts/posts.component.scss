@@ -20,7 +20,6 @@ $desktop: 840px;
 }
 
 main {
-    justify-content: center;
 
     section#Card {
         text-align: center;
@@ -82,6 +81,37 @@ main {
                 vertical-align: middle;
                 width: 50%;
             }
+        }
+        span {
+            margin-left: 10px;
+            color: #fff;
+            padding: 5px;
+            height: 30px;
+            width: 30px;
+            background-color: color(primary);
+            border-radius: 15%;
+
+            fa-icon {
+                cursor: pointer;
+            }
+        }
+    }
+}
+div {
+    margin: auto;
+    justify-content: center;
+    position: absolute;
+    bottom: 30px;
+    display: block;
+    background-color: color(primary);
+    width: fit-content;
+    color: color(primary);
+
+    pagination-controls {
+        display: none;
+        @include desktop
+        {
+            display: block;
         }
     }
 }

@@ -5,6 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
 
+  //
+  //The userId variable used globally between routes
+  //
   public userId!: string;
 
   constructor() { }

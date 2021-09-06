@@ -18,7 +18,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable < [] > {
-    return this.http.get<[]>('https://dummyapi.io/data/v1/user?limit=10', httpOptions);
+    return this.http.get<[]>('https://dummyapi.io/data/v1/user?limit=20', httpOptions);
   }
 
   getUser(userId: string): Observable < User > {
