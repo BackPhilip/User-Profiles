@@ -1,10 +1,20 @@
 export interface User 
 {
-    id?: number;
-    name: string;
-    age: number;
-    about: string;
-    gender: boolean;
-    created: string;
-    profileImg: string;
+    id?: string;
+    title: string;
+    firstName: string;
+    lastName: string;
+    gender: string;
+    dateOfBirth: string;
+    registerDate: string;
+    email: string;
+    phone: number;
+    picture: string;
+
+    location: {
+        state: string,
+        street: string,
+        city: string,
+        country: string
+    }
 }

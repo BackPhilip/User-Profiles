@@ -1,16 +1,19 @@
 <br>
 <header *ngIf="user != undefined">
-    <a>View - {{user.name}} </a>
+    <a>View - {{user.firstName}} </a>
 </header>
 <main>
     <section *ngIf="user != undefined" id="Card">
-            <img src={{user.profileImg}} id="profileImg">
-            <h2>{{ user.name }}</h2>
-            <p *ngIf="user.gender">Male - {{user.age}}</p>
-            <p *ngIf="!user.gender">Female - {{user.age}}</p>
-            <p>{{user.about}}</p>
-            <h4>Created: {{user.created}}</h4>
+            <img src={{user.picture}} id="profileImg">
+            <h2>{{ user.title }} {{ user.firstName }} {{ user.lastName }}</h2>
+            <h4>{{ user.gender }}</h4>
+            <div>
+                <p>Date of Birth:  {{ user.dateOfBirth }}</p>
+                <p>Location:  {{ user.location.country }}, {{ user.location.city}}</p>
+                <p>Phone:  {{ user.phone }}</p>
+                <p>Registered On:  {{ user.registerDate }}</p>
+            </div>
+            <a id="goBackBtn" (click) = "onBack()">Go Back</a>
     </section>
-    <a id="goBackBtn" (click) = "onBack()">Go Back</a>
 </main>
 

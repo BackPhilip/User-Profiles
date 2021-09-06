@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { User } from '../User';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { User } from '../User';
 
 const httpOptions = 
 {
   headers: new HttpHeaders({
+    "app-id": "613510159c64bb8442b1ff5d",
     'Content-Type': 'application/json'
   })
 }
@@ -15,22 +15,13 @@ const httpOptions =
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'http://localhost:5000/users'
-
   constructor(private http: HttpClient) { }
 
-  getUsers(): Observable < User [] > {
-    return this.http.get<User[]>(this.apiUrl);
+  getUsers(): Observable < [] > {
+    return this.http.get<[]>('https://dummyapi.io/data/v1/user?limit=10', httpOptions);
   }
 
-  addUser(user: User): Observable<User>
-  {
-    return this.http.post<User>(this.apiUrl, user, httpOptions);
-  }
-
-  deleteUser(user: User): Observable<User>
-  {
-    const url = `${this.apiUrl}/${user.id}`;
-    return this.http.delete<User>(url);
+  getUser(userId: string): Observable < User > {
+    return this.http.get< User >("https://dummyapi.io/data/v1/user/" + userId, httpOptions);
   }
 }

@@ -1,16 +1,10 @@
 <br>
 <header>
-    <a>Philip Greyling - User Profiles <a id="newUserBtn" (click) = "onAdd()">Add a new User</a> <a id="postsBtn" (click) = "onPosts()">Posts</a></a>
+    <a>Philip Greyling - User Profiles <a id="postsBtn" (click) = "onPosts()">Check Posts</a></a>
 </header>
 <main>
     <section *ngFor="let user of users" id="Card" (click) = "onClick(user)">
-            <img src={{user.profileImg}} id="profileImg">
-            <h2>{{ user.name }}</h2>
-            <p *ngIf="user.gender">Male - {{user.age}}</p>
-            <p *ngIf="!user.gender">Female - {{user.age}}</p>
-            <a>
-                <!--<fa-icon [ngStyle]="{'color': 'lightgreen' }" [icon]="faEdit"></fa-icon>-->
-                <fa-icon [ngStyle]="{'color': 'red' }"  [icon]="faDelete" (click) = "onDelete(user);$event.stopPropagation()"></fa-icon>
-            </a>
+            <img src={{user.picture}} id="profileImg">
+            <h2>{{ user.firstName }} {{ user.lastName }}</h2>
     </section>
 </main>

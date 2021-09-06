@@ -28,7 +28,7 @@ main {
 
     @include desktop {
         display: grid;
-        grid-template-columns: 400px 400px 400px;
+        grid-template-columns: 300px 300px 300px 300px;
     }
 
     section#Card {
@@ -54,7 +54,7 @@ main {
         }
 
         @include desktop {
-            width: 300px;
+            width: 250px;
             height: fit-content;
             padding-left: 20px;
             padding-right: 20px;
@@ -64,21 +64,6 @@ main {
             border-radius: 25%;
             height: 180px;
             width: 150px;
-
-            @include desktop {
-                height: 180px;
-                width: 40%;
-            }
-        }
-
-        fa-icon {
-            margin: 7px;
-            font-size: larger;
-            opacity: 0.6;
-
-            &:hover {
-                opacity: 1;
-            }
         }
     }
 }

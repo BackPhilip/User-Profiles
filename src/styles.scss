@@ -35,7 +35,7 @@ header {
             display: inline;
         }
     }
-    a#newUserBtn {
+    a#postsBtn {
         margin-right: 5px;
         cursor: pointer;
         color: #fff;
@@ -49,26 +49,6 @@ header {
 
             &:hover {
                 background-color: color(accent);
-            }
-
-            @include desktop {
-                padding: $padding $padding * 4;
-            }
-    }
-    a#postsBtn {
-        cursor: pointer;
-        color: #fff;
-        border-radius: $borders;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: bold;
-        background-color: color(primary-light);
-        width: fit-content;
-        margin-top: 7px;
-        text-align: center;
-
-            &:hover {
-                background-color: color(primary-dark);
             }
 
             @include desktop {

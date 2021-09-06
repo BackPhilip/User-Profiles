@@ -6,8 +6,8 @@
 
     <main>
         <section *ngFor="let post of posts" id="Card">
-                <h3><img src={{userImg(post.userId)}}>{{ post.title }}</h3>
-                <p>{{post.text}}</p>
+                <h3><img src="{{post.owner.picture}}">  <p>{{post.owner.title}} {{post.owner.firstName}} {{post.owner.lastName}}</p> <small>{{post.publishDate}}</small></h3>
+                <p><img src="{{post.image}}"> <strong>{{post.text}}</strong> </p>
         </section>
     </main>
 </body>

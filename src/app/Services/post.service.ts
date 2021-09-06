@@ -6,6 +6,7 @@ import { Post } from '../Post';
 const httpOptions = 
 {
   headers: new HttpHeaders({
+    "app-id": "613510159c64bb8442b1ff5d",
     'Content-Type': 'application/json'
   })
 }
@@ -18,7 +19,7 @@ export class PostService {
 
   constructor(private http: HttpClient) { }
 
-  getPosts(): Observable < Post [] > {
-    return this.http.get<Post[]>(this.apiUrl);
+  getPosts(): Observable < [] > {
+    return this.http.get<[]>('https://dummyapi.io/data/v1/post?limit=10', httpOptions);
   }
 }
